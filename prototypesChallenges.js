@@ -97,6 +97,39 @@ const myCar= new Car("Volkswagan","Polo")
 console.log(myCar.getDetails());
 console.log(myCar.startEngine());
 
+/* 
+Encapsulation Using Getters and Setters
+Create a class BankAccount with a private property _balance. Add methods deposit(amount) and withdraw(amount). 
+Use getters and setters to access and modify the _balance while ensuring the balance never goes negative.
+*/
+
+class BankAccount {
+    #balance=0;
+    deposit(amount){
+        if(amount>0){
+            this.#balance+= amount;
+            return`Deposited $ ${amount} New balance: $${this.#balance}`
+        }
+        return "Deposited amount must be Positive";
+    }
+
+
+    withdraw(amount){
+        if (amount>0 && amount<=this.#balance) {
+            this.#balance-=amount
+            return `Withdrawn $${amount} New balance: $${this.#balance}`;
+        }
+        else if (amount> this.#balance){
+            return`Insufficient Fund`
+        }
+        return`Withdrawl Amount Must be Positive`;
+    }
+
+    get balance(){
+        return this.#balance;
+    }
+}
+
 
 
 
