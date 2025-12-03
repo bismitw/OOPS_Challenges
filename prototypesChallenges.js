@@ -46,10 +46,31 @@ Person.prototype.greet= function(){
 
 let p = new Person("Alice", 25);
 console.log(p.greet()); 
+/*   
+Class Inheritance
+Create a class Vehicle with properties make and model, and a method getDetails() that returns a string "Make: [make], Model: [model]".
+Create a subclass Car that extends Vehicle and adds a method startEngine() that returns "Engine started".
+*/
 
-let Bismit = new Person('Wagle', -12)
-console.log(Bismit.greet());
+class Vehicle{
+    constructor(make,model){
+        this.make=make
+        this.model=model
+    }
+    getDetails(){
+        return`Make:${this.make}, Model:${this.model}`
 
+    }
+}
 
+class Car extends Vehicle{
+    startEngine(){
+        return `Engine Started`
+    }
+}
+
+const myCar= new Car("Volkswagan","Polo")
+console.log(myCar.getDetails());
+console.log(myCar.startEngine());
 
 
