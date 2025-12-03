@@ -9,7 +9,7 @@ function Animal(){
 }
 
 Animal.prototype.speak=function(){
-    return`Animal Speaking`;
+    return`Animal speaking`;
 }
 
 function Dog(){
@@ -23,14 +23,37 @@ Dog.prototype.bark= function(){
 }
 
 let myDog = new Dog();
-console.log(Dog.speak()); //Animal Inherited Methods
-console.log(Dog.bark()); // Own Method
+console.log(myDog.speak()); //Animal Inherited Methods
+console.log(myDog.bark()); // Own Method
 
 
 console.log(Object.getPrototypeOf(myDog)=== Dog.prototype);//Does myDog's direct prototype = Dog.prototype?
 console.log(Object.getPrototypeOf(Dog.prototype));
 
+/* 
+Create a functional constructor Person that takes name and age as parameters. Add a method greet() to the constructor that returns "Hello, my name is [name]". 
+Modify the Person constructor to throw an error if the age is not a positive number.
+*/
 
+function Person(name, age){
+
+    if (typeof age !=="number" || age <=0) {
+        throw new Error("Age Must be a Positive Number"); 
+    }
+    this.name = name
+    this.age = age
+}
+
+Person.prototype.greet= function(){
+    return `Hello, my name is ${this.name}`;
+}
+
+let p = new Person("Alice", 25);
+console.log(p.greet()); 
+
+let Bismit = new Person('Wagle', -12)
+
+console.log(Bismit.greet());
 
 
 
