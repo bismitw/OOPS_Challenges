@@ -4,7 +4,6 @@ Create a constructor function Animal that has a method speak() that return 'Anim
 Then create another constructor Dog that inherits from Animal using prototypes.
 The Dog constructor should add a method bark() that returns 'Woof!'. Demonstrate the prototype chain between Dog and Animal.
 */
-
 function Animal(){
 }
 
@@ -25,8 +24,6 @@ Dog.prototype.bark= function(){
 let myDog = new Dog();
 console.log(myDog.speak()); //Animal Inherited Methods
 console.log(myDog.bark()); // Own Method
-
-
 console.log(Object.getPrototypeOf(myDog)=== Dog.prototype);//Does myDog's direct prototype = Dog.prototype?
 console.log(Object.getPrototypeOf(Dog.prototype));
 
@@ -36,7 +33,6 @@ Modify the Person constructor to throw an error if the age is not a positive num
 */
 
 function Person(name, age){
-
     if (typeof age !=="number" || age <=0) {
         throw new Error("Age Must be a Positive Number"); 
     }
@@ -52,7 +48,6 @@ let p = new Person("Alice", 25);
 console.log(p.greet()); 
 
 let Bismit = new Person('Wagle', -12)
-
 console.log(Bismit.greet());
 
 
